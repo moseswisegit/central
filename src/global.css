@@ -1,0 +1,13 @@
+body{
+    color:white;
+    font-family: Maximum Impact;
+}
+
+::-webkit-scrollbar{
+background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+background-color: rgb(0, 0,0,0.61);
+border-radius: 10px;
+}
