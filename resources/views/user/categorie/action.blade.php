@@ -1,0 +1,132 @@
+{{-- edit modal --}}
+
+<div class="modal fade" id="categorie-info{{ $categorie->id }}">
+    <div class="modal-dialog">
+        <form method="POST" action="{{ route("user.categorie.update",$categorie->id)}}">
+            @csrf
+            @method("PUT")
+            <div class="modal-content bg-info">
+                <div class="modal-header">
+                <h4 class="modal-title">@lang('quickuser.qa_edit')</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                
+                    <div class="form-group row">
+                        <label for="libelle" class="col-sm-2 col-form-label">{{trans('quickuser.categorie.fields.libelle').'*'}}</label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="libelle" value="{{$categorie->libelle }}" class="form-control" placeholder="" required>
+                        </div>
+                        <p class="help-block"></p>
+                        @if($errors->has('libelle'))
+                            <p class="help-block">{{ $errors->first('libelle') }}</p>
+                        @endif
+                    </div>
+                    
+                </div>
+                <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">{{ trans('quickuser.qa_update')}}</button>
+                </div>
+            </div>
+        </form>
+    <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+{{-- delete modal --}}
+
+<div class="modal fade" id="categorie-danger{{$categorie->id }}">
+    <div class="modal-dialog">
+      <div class="modal-content bg-danger">
+        <div class="modal-header">
+          <h4 class="modal-title">Danger Modal</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form  action="{{ route('user.categorie.destroy',$categorie->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <div class="modal-body">
+                <h4> Voulez-vous vraiment supprimer cette ligne</h4>
+            
+                
+            </div>
+            <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-outline-light">Supprimer</button>
+            </div>
+    </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+<!-- /.modal -->
+
+<div class="modal fade" id="categorie-default{{$categorie->id }}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"> Indormation sur  {{$categorie->title }}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         
+            {{-- <div class="info-box">
+                <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+  
+                <div class="info-box-content">
+                  <span class="info-box-text">Bookmarks</span>
+                  <span class="info-box-number">410</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div> --}}
+
+              
+                <div class="position-relative p-3 bg-white" style="height: 180px">
+                  <div class="ribbon-wrapper ribbon-lg">
+                    <div class="ribbon bg-yellow">
+                        {{$categorie->title }}
+                    </div>
+                  </div>
+
+                  <div class="info-box">
+                    <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+      
+                    <div class="info-box-content">
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">{{trans('quickuser.users.fields.name')}}</label>
+                            <div class="col-sm-8">
+                                <input type="text"  name="name" value="{{$categorie->title }}" class="form-control" placeholder="" disabled>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <!-- /.info-box-content -->
+                  </div>
+                
+                </div>
+              
+
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+

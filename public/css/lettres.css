@@ -1,0 +1,35 @@
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    #lettrededecharg {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #fff;
+        line-height: 1.6;
+    }
+    #logo {
+        background-color: red; /* Couleur de fond pour le logo */
+        color: white;
+        padding: 10px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    #ville-date {
+        text-align: right;
+    }
+    #contenu {
+        margin-top: 50px;
+    }
+    #signature {
+        margin-top: 20px;
+    }
+    .clearfix {
+        clear: both;
+    }
+    #entete{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
